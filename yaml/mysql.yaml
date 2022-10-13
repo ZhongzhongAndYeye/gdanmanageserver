@@ -1,0 +1,6 @@
+db: 
+ url: 192.168.160.128
+ username: root
+ password: 123456
+ port: 3306
+ sqlname: paijumanage
