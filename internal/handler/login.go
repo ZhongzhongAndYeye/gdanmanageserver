@@ -15,7 +15,7 @@ func Login(c *gin.Context){
 			Password string	`json:"password"`
 		}
 		rsp struct {
-			Msg string `json:"msg"`
+			Msg string `json:"msg"` 
 			Token string `json:"token"`
 		}
 	)

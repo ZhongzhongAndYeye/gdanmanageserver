@@ -14,7 +14,7 @@ func Xsspaijuinsert(c *gin.Context) {
 		}
 
 		rsp struct{
-			Msg string
+			Msg string	`json:"msg"`
 		}
 	)
 	c.ShouldBindJSON(&paijudata)

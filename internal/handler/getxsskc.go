@@ -7,15 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Getxsskc(c *gin.Context){
+func Getxsskc(c *gin.Context) {
 	var rsp struct {
-		Msg string
-		Tokenvalid int
-		Data []model.Xssdataall
+		Msg        string             `json:"msg"`
+		Tokenvalid int                `json:"tokenvalid"`
+		Data       []model.Xssdataall `json:"data"`
 	}
 	rsp.Tokenvalid = 1
-	rsp.Msg,rsp.Data = model.Getxsskc()
-	defer func(){
-		c.JSON(http.StatusOK,rsp)
+	rsp.Msg, rsp.Data = model.Getxsskc()
+	defer func() {
+		c.JSON(http.StatusOK, rsp)
 	}()
 }

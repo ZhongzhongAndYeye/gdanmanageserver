@@ -1,2 +1,0 @@
-# server/internal/handler
-internal\handler\getxsskc.go:16:6: rsp.token undefined (type struct{Msg string; Tokenvalid int; Data []model.Xssdataall} has no field or method token)
