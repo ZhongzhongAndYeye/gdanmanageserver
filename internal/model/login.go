@@ -41,7 +41,7 @@ func Login(username string, password string) (msg string, token string) {
 func CreateJWT() (jwtstr string) {
 	c := jwt.StandardClaims{
 		NotBefore: time.Now().Unix() - 60,   // 生效时间,当前时间的60s之前
-		ExpiresAt: time.Now().Unix() + 3600, // 失效时间,当前时间的1个小时后
+		ExpiresAt: time.Now().Unix() + 3600*2, // 失效时间,当前时间的1个小时后
 	}
 	t := jwt.NewWithClaims(jwt.SigningMethodHS256, c)
 	mySigningKey := []byte("iamlulu")

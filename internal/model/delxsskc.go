@@ -12,7 +12,7 @@ func Delxsskc(pjid string) (msg string) {
 	type Xsspjid struct {
 		Pjid string
 		PutInTime string
-		Frequency float32
+		Frequency float64
 		Count     int
 	}
 	db := utils.DB

@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 	"server/internal/model"
 
@@ -19,6 +20,7 @@ func Delxsskc(c *gin.Context) {
 	)
 	c.ShouldBindJSON(&pjidcon)
 	rsp.Tokenvalid = 1
+	fmt.Println(pjidcon)
 	rsp.Msg = model.Delxsskc(pjidcon.Pjid)
 	defer func ()  {
 		c.JSON(http.StatusOK,rsp)

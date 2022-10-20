@@ -8,7 +8,7 @@ import (
 type Xssdata struct {
 	Pjid      string
 	PutInTime time.Time
-	Frequency float32
+	Frequency float64
 	Count     int
 }
 type Pjdata struct {
@@ -18,7 +18,7 @@ type Pjdata struct {
 type Xssdataall struct {
 	Pjid      string   `json:"pjid"`
 	PutInTime string   `json:"putintime"`
-	Frequency float32  `json:"frequency"`
+	Frequency float64  `json:"frequency"`
 	Count     int      `json:"count"`
 	Pjdata    []Pjdata `json:"pjdata"`
 }

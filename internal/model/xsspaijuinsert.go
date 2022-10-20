@@ -19,7 +19,7 @@ func Xsspaijuinsert(data [][]int) (msg string) {
 	type Xsspjid struct {
 		Pjid string
 		PutInTime string
-		Frequency float32
+		Frequency float64
 		Count     int
 	}
 	pjid := uuid.NewV4().String()
