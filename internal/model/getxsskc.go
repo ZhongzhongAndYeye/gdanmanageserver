@@ -35,7 +35,7 @@ func Getxsskc() (msg string, xssdataall []Xssdataall) {
 	num := len(xssdata)
 	xssdataall = make([]Xssdataall, num)
 	for i, v := range xssdata {
-		err := db.Table("xsspaijudatas").Where("pjid = ?", v.Pjid).Find(&pjdata).Error
+		err := db.Table("xsspaijudatas").Where("pjid = ?", v.Pjid).Order("`order` asc").Find(&pjdata).Error
 		if err != nil {
 			msg = "操作xsspaijudatas发生错误"
 			return

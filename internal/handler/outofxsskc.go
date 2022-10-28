@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"fmt"
 	"net/http"
 	"server/internal/model"
 
@@ -21,7 +20,6 @@ func Outofxsskc(c *gin.Context) {
 		}
 	)
 	c.ShouldBindJSON(&xssck)
-	fmt.Println(xssck)
 	rsp.Status = model.Outofxsskc(xssck.Tableid, xssck.Pjid)
 	rsp.Tokenvalid = 1
 	defer func(){
