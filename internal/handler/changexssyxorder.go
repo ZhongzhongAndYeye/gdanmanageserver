@@ -12,6 +12,7 @@ func Changexssyxorder(c *gin.Context) {
 		Tablepjid string
 		Beforeo   int
 		Aftero    int
+		Tableid   string
 	}
 	var rsp struct {
 		Tokenvalid int `json:"tokenvalid"`
@@ -19,7 +20,7 @@ func Changexssyxorder(c *gin.Context) {
 	}
 	c.ShouldBindJSON(&req)
 	rsp.Tokenvalid = 1
-	rsp.Status = model.Changexssyxorder(req.Tablepjid, req.Beforeo, req.Aftero)
+	rsp.Status = model.Changexssyxorder(req.Tablepjid, req.Beforeo, req.Aftero,req.Tableid)
 	defer func() {
 		c.JSON(http.StatusOK, rsp)
 	}()

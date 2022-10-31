@@ -1,8 +1,11 @@
 package model
 
 import (
+	"encoding/json"
 	"fmt"
+	"reflect"
 	"server/utils"
+	"sort"
 	"strconv"
 
 	uuid "github.com/satori/go.uuid"
@@ -65,7 +68,18 @@ func Outofxsskc(tableid string, pjid string) (status int) {
 		// 遍历四局手牌
 		count := 0
 		for i := 0; i < 4; i++ {
-			if pjdatas[i].HandCard == val[i].HandCard {
+			// 解析数据库中的手牌 string-->[]int并且排序 才能比较其中的元素是否相同
+			pjdatasbyte := []byte(pjdatas[i].HandCard)
+			valbyte := []byte(val[i].HandCard)
+			var pjdatasintslice []int
+			var valintslice []int
+			json.Unmarshal(pjdatasbyte,&pjdatasintslice)
+			json.Unmarshal(valbyte,&valintslice)
+			sort.Ints(pjdatasintslice)
+			sort.Ints(valintslice)
+			fmt.Println(pjdatasintslice)
+			fmt.Println(valintslice)
+			if reflect.DeepEqual(pjdatasintslice,valintslice) {
 				count = count + 1
 			}
 		}
@@ -171,6 +185,10 @@ func Outofxsskc(tableid string, pjid string) (status int) {
 	status = 1
 	return
 }
+
+
+
+
 
 func insert(tableid string, pjid string) (status int) {
 	db := utils.DB

@@ -1,0 +1,4 @@
+# server/internal/model
+internal\model\xsspaijuinsert.go:48:12: undefined: json
+internal\model\xsspaijuinsert.go:92:5: undefined: json
+internal\model\xsspaijuinsert.go:111:12: undefined: json
