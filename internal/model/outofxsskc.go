@@ -29,7 +29,7 @@ func Outofxsskc(tableid string, pjid string) (status int) {
 
 	// 查询此桌子上每个桌子牌局id的具体牌局信息
 	type Tablepjdata struct {
-		Order    string
+		Order    int
 		HandCard string
 	}
 
